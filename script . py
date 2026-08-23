@@ -1,2 +1,50 @@
-# code-vault 
-A central repository for core utilities custom scripts, and software project
+import time
+import random
+
+def game():
+    print("==========================================")
+    print("     ALIEN INVASION: SPACE SURVIVAL       ")
+    print("==========================================\n")
+    time.sleep(1)
+    
+    print("ALARM! Red alerts flash across the bridge. An alien warship has breached your hull!")
+    print("You grab your equipment and rush into the hallway.\n")
+    
+    # Choice 1
+    print("Do you go to the (1) Armory to get a weapon, or (2) Engine Room to lock down the ship?")
+    choice1 = input("Enter 1 or 2: ")
+    
+    if choice1 == "1":
+        print("\nYou sprint to the Armory and grab a Heavy Plasma Rifle. You feel unstoppable!")
+        weapon = "Plasma Rifle"
+    else:
+        print("\nYou hurry to the Engine Room and grab a Welding Torch while triggering emergency doors.")
+        weapon = "Welding Torch"
+        
+    time.sleep(1.5)
+    print(f"\nArmed with your {weapon}, you round the corner and come face-to-face with an Alien Trooper!")
+    
+    # Choice 2
+    print("\nDo you (1) Fight the alien, or (2) Sneak into the ventilation shaft?")
+    choice2 = input("Enter 1 or 2: ")
+    
+    if choice2 == "1":
+        print(f"\nYou raise your {weapon} and attack!")
+        success_chance = random.randint(1, 10)
+        if success_chance > 3:
+            print("CRITICAL HIT! You blast the alien and it collapses. You clear the corridor!")
+            print("\n*** VICTORY! You saved the ship and won the game! ***")
+        else:
+            print("You missed! The alien dodges and overwhelms you.")
+            print("\n*** GAME OVER! Better luck next time. ***")
+            
+    elif choice2 == "2":
+        print("\nYou jump into the vent just in time. You crawl past the alien team unnoticed.")
+        print("You reach the escape pod bay and eject safely into space!")
+        print("\n*** SURVIVAL ENDING! You lived to fight another day! ***")
+    else:
+        print("\nYou hesitated too long! The alien spotted you. GAME OVER!")
+
+# Run the game
+if __name__ == "__main__":
+    game()
